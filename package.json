@@ -1,0 +1,20 @@
+{
+    "name": "EMPLOYEE-TRACKER",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "console.table": "^0.10.0",
+        "dotenv": "^16.0.3",
+        "inquirer": "^8.2.4",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.0.1",
+        "node": "^19.0.0"
+    }
+}

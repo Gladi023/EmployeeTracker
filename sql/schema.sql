@@ -1,66 +1,28 @@
-const { Sequelize } = require('sequelize');
+DROP DATABASE IF EXISTS employeesDataBase;
 
-const sequelize = new Sequelize('employeesDataBase', 'username', 'password', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
+CREATE DATABASE employeesDataBase;
 
-const Department = sequelize.define('department', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: Sequelize.STRING
-  }
-});
+USE employeesDataBase;
 
-const Role = sequelize.define('role', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  title: {
-    type: Sequelize.STRING
-  },
-  salary: {
-    type: Sequelize.DECIMAL(10, 3)
-  },
-  department_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: Department,
-      key: 'id'
-    }
-  }
-});
+CREATE TABLE department (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30) NULL,
+    PRIMARY KEY (id)
+);
 
-const Employee = sequelize.define('employee', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  first_name: {
-    type: Sequelize.STRING
-  },
-  last_name: {
-    type: Sequelize.STRING
-  },
-  role_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: Role,
-      key: 'id'
-    }
-  },
-  manager_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: Employee,
-      key: 'id'
-    }
-  }
-});
+CREATE TABLE role (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30) NULL,
+    salary DECIMAL(10.3) NULL,
+    department_id INT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE employee (
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(30) NULL,
+    last_name VARCHAR(30) NULL,
+    role_id INT NULL,
+    manager_id INT NULL,
+    PRIMARY KEY (id)
+);

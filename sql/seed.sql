@@ -1,27 +1,20 @@
-const { Department, Role, Employee } = require('../models');
+INSERT INTO department (name)
+VALUES ("Sales"), ("Engineering"), ("Finance"), ("Legal");
 
-const departmentData = [
-    { name: "Sales" },
-    { name: "Engineering" },
-    { name: "Health" },
-    { name: "Legal" }
-];
+INSERT INTO role (title, salary, department_id)
+VALUES 
+  ("Health", 20000, 1), 
+  ("Sales", 3000, 1), 
+  ("Paralegal", 150000, 2), 
+  ("Software", 120000, 2), 
+  ("Accountant", 2000, 3), 
+  ("Team", 30000, 4);
 
-const roleData = [
-    { title: "Ultrasound", salary: 20000, department_id: 1 },
-    { title: "Rad", salary: 30, department_id: 1 },
-    { title: "Engineer", salary: 3000, department_id: 2 },
-    { title: "Software", salary: 400000, department_id: 2 },
-    { title: "lAW", salary: 20000, department_id: 3 },
-    { title: "pARALEGAL", salary: 20000, department_id: 4 },
-    { title: "Lawyer", salary: 50000, department_id: 4 }
-];
-
-const employeeData = [
-    { first_name: "Gladi", last_name: "Vill", role_id: 1 },
-    { first_name: "Cam", last_name: "Kop", role_id: 2 },
-    { first_name: "Kasper", last_name: "C", role_id: 3 },
-    { first_name: "Isa", last_name: "O", role_id: 4 },
-    { first_name: "Lorem", last_name: "Ipsum", role_id: 5 },
-    { first_name: "Cait", last_name: "Snow", role_id: 6 },
-    { first_name: "Val", last_name: "Vale", role_id: 7}
+INSERT INTO employee (first_name, last_name, role_id)
+VALUES 
+  ("Glar", "V", 1), 
+  ("Isa", "O", 2), 
+  ("jOE", "M", 3),
+  ("Kyl", "h", 4), 
+  ("Love", "S", 5), 
+  ("Dita", "T", 6);
